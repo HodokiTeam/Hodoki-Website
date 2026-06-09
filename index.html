@@ -1,441 +1,302 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hodoki – Tecnologia e IA ao serviço do teu negócio. Consultoria digital, desenvolvimento de aplicações e formação em IA para empresas.">
-    <meta name="keywords" content="consultoria digital, IA, inteligência artificial, desenvolvimento web, formação empresas, ChatGPT, Portugal">
-    <meta name="author" content="Hodoki">
-    <title>Hodoki – Tecnologia e IA ao serviço do teu negócio</title>
-    <link rel="canonical" href="https://hodoki.pt/">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Hodoki",
-        "url": "https://hodoki.pt",
-        "email": "hello@hodoki.pt",
-        "telephone": "+351934935671",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Avenida da Conduta, nº 314",
-            "addressLocality": "Gondomar",
-            "addressCountry": "PT"
-        },
-        "sameAs": []
-    }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hodoki — Inteligência Aplicada | Software, Formação e Consultoria AI em Portugal</title>
+  <meta name="description" content="A Hodoki desenvolve software e websites para empresas, oferece formação em AI, programação e 3D, e presta consultoria em inteligência artificial com servidores on-premise seguros e conformes com o RGPD. Gondomar, Portugal." />
+  <meta name="keywords" content="desenvolvimento software empresarial Portugal, websites para empresas, formação inteligência artificial, consultoria AI, servidores on-premise RGPD, Hodoki, Gondomar" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://hodoki.pt/" />
+  <link rel="alternate" hreflang="pt-PT"    href="https://hodoki.pt/" />
+  <link rel="alternate" hreflang="en"        href="https://hodoki.pt/?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://hodoki.pt/" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://hodoki.pt/" />
+  <meta property="og:title"       content="Hodoki — Inteligência Aplicada" />
+  <meta property="og:description" content="Software, formação em AI e 3D, e consultoria com servidores on-premise RGPD." />
+  <meta property="og:image"       content="https://hodoki.pt/imgs/HodokiBack.jpg" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <meta name="twitter:title"      content="Hodoki — Inteligência Aplicada" />
+  <meta name="twitter:description" content="Software, formação em AI e 3D, e consultoria com servidores on-premise RGPD." />
+  <meta name="twitter:image"      content="https://hodoki.pt/imgs/HodokiBack.jpg" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Hodoki","alternateName":"Hodoki — Inteligência Aplicada","url":"https://hodoki.pt","logo":"https://hodoki.pt/imgs/logos/Hodoki Logo_white.png","description":"Desenvolvimento de software e websites para empresas, formação em AI, programação e 3D, e consultoria com servidores on-premise RGPD.","address":{"@type":"PostalAddress","streetAddress":"Avenida da Conduta, nº 314","addressLocality":"Gondomar","addressCountry":"PT"},"contactPoint":{"@type":"ContactPoint","telephone":"+351-934-935-671","contactType":"customer service","availableLanguage":["Portuguese","English"]},"email":"hello@hodoki.pt"}
+  </script>
+  <link rel="icon" type="image/png" href="imgs/logos/HodokiCompact_favicon.png" />
+  <link rel="apple-touch-icon"    href="imgs/logos/HodokiCompact_favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="container navbar-container">
-            <button class="logo-btn" onclick="scrollToSection('#hero')">
-                <img src="logo-hodoki.png" alt="Hodoki" class="logo">
-            </button>
-            
-            <div class="nav-links" id="navLinks">
-                <button onclick="scrollToSection('#hero')">Início</button>
-                <button onclick="scrollToSection('#services')">Serviços</button>
-                <button onclick="scrollToSection('#why')">Porquê Hodoki</button>
-                <button class="btn btn-gradient" onclick="scrollToSection('#contact')">Falar connosco</button>
-            </div>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
-                <svg class="menu-icon" id="menuIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-                <svg class="close-icon hidden" id="closeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-    </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu hidden" id="mobileMenu">
-        <button onclick="scrollToSection('#hero')">Início</button>
-        <button onclick="scrollToSection('#services')">Serviços</button>
-        <button onclick="scrollToSection('#why')">Porquê Hodoki</button>
-        <button class="btn btn-gradient btn-lg" onclick="scrollToSection('#contact')">Falar connosco</button>
+  <div id="top-bar-ph"></div>
+  <div id="nav-ph"></div>
+
+  <!-- ═══════ HERO (minimal) ══════════════════════════════════ -->
+  <section id="hero" class="hero" aria-label="Hero">
+    <div class="hero-bg">
+      <img src="imgs/HodokiBack.jpg" alt="" aria-hidden="true" />
     </div>
-
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="hero-bg-gradient"></div>
-            <div class="hero-orb hero-orb-1"></div>
-            <div class="hero-orb hero-orb-2"></div>
-            
-            <div class="container hero-content">
-                <h1 class="hero-title animate-fade-in">
-                    Hodoki – Tecnologia e IA ao serviço do teu negócio
-                </h1>
-                
-                <p class="hero-subtitle animate-fade-in delay-1">
-                    Consultoria, desenvolvimento e formação para empresas que querem usar a tecnologia e a inteligência artificial de forma prática, sem complicar.
-                </p>
-                
-                <div class="hero-cta animate-fade-in delay-2">
-                    <button class="btn btn-gradient btn-xl group" onclick="scrollToSection('#contact')">
-                        Pedir mais informações
-                        <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
-                </div>
-                
-                <div class="benefits-grid animate-fade-in delay-3">
-                    <div class="benefit-item">
-                        <svg class="check-icon primary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
-                        <p>Consultoria digital focada em resultados</p>
-                    </div>
-                    <div class="benefit-item">
-                        <svg class="check-icon secondary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
-                        <p>Webapps, sites, apps e jogos à medida</p>
-                    </div>
-                    <div class="benefit-item">
-                        <svg class="check-icon primary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
-                        <p>Formação prática em IA e ChatGPT para equipas</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="services-section">
-            <div class="section-bg"></div>
-            
-            <div class="container">
-                <header class="section-header">
-                    <h2><span class="gradient-text">O que fazemos</span></h2>
-                    <p>Combinamos tecnologia, estratégia e formação para impulsionar o teu negócio</p>
-                </header>
-                
-                <div class="services-grid">
-                    <article class="service-card">
-                        <div class="service-icon gradient-1">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                            </svg>
-                        </div>
-                        <h3>Consultoria Digital & IA</h3>
-                        <p>Apoiamos empresas na criação de presença online, na melhoria de processos e na integração de IA. Planeamos contigo websites, aplicações de gestão e automações que tornam o trabalho mais simples e eficiente.</p>
-                    </article>
-                    
-                    <article class="service-card">
-                        <div class="service-icon gradient-2">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
-                        </div>
-                        <h3>Desenvolvimento</h3>
-                        <p>Desenvolvemos webapps, websites, aplicações móveis e jogos. Do conceito ao lançamento, criamos soluções rápidas, seguras e fáceis de usar, alinhadas com as necessidades do teu negócio.</p>
-                    </article>
-                    
-                    <article class="service-card">
-                        <div class="service-icon gradient-3">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                            </svg>
-                        </div>
-                        <h3>Formação para Empresas</h3>
-                        <p>Formamos equipas para tirar partido da IA: uso de ChatGPT no trabalho, criação de prompts, automações e bases de programação. Sessões práticas, adaptadas aos casos reais da tua empresa.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Section -->
-        <section id="why" class="why-section">
-            <div class="container">
-                <header class="section-header">
-                    <h2>Porquê a <span class="gradient-text">Hodoki</span>?</h2>
-                    <p>Transformamos tecnologia em resultados concretos para o teu negócio</p>
-                </header>
-                
-                <div class="benefits-cards">
-                    <article class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <circle cx="12" cy="12" r="6"></circle>
-                                <circle cx="12" cy="12" r="2"></circle>
-                            </svg>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Foco no negócio, não só na tecnologia</h3>
-                            <p>Compreendemos os teus objetivos empresariais e desenvolvemos soluções que geram valor real.</p>
-                        </div>
-                    </article>
-                    
-                    <article class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"></path>
-                            </svg>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Integração de IA onde traz valor real</h3>
-                            <p>Implementamos inteligência artificial de forma estratégica, em áreas que melhoram processos e resultados.</p>
-                        </div>
-                    </article>
-                    
-                    <article class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="8" r="7"></circle>
-                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-                            </svg>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Experiência em consultoria, desenvolvimento e formação</h3>
-                            <p>Oferecemos conhecimento completo desde o planeamento até à execução e capacitação das equipas.</p>
-                        </div>
-                    </article>
-                    
-                    <article class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                            </svg>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Linguagem clara, sem jargão desnecessário</h3>
-                            <p>Comunicamos de forma direta e acessível, garantindo que todos compreendem as soluções propostas.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Detailed Services Section -->
-        <section id="details" class="details-section">
-            <div class="container">
-                <header class="section-header">
-                    <h2>Serviços <span class="gradient-text">em detalhe</span></h2>
-                    <p>Soluções completas adaptadas às necessidades da tua empresa</p>
-                </header>
-                
-                <div class="details-grid">
-                    <article class="detail-card">
-                        <div class="detail-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                            </svg>
-                        </div>
-                        <h3>Web & Apps</h3>
-                        <ul>
-                            <li><span class="bullet primary">•</span>Websites institucionais e landing pages</li>
-                            <li><span class="bullet secondary">•</span>Webapps internas e dashboards de gestão</li>
-                            <li><span class="bullet primary">•</span>Apps simples para Android/iOS</li>
-                            <li><span class="bullet secondary">•</span>Pequenos jogos para marketing ou formação</li>
-                        </ul>
-                    </article>
-                    
-                    <article class="detail-card">
-                        <div class="detail-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-                                <rect x="9" y="9" width="6" height="6"></rect>
-                                <line x1="9" y1="1" x2="9" y2="4"></line>
-                                <line x1="15" y1="1" x2="15" y2="4"></line>
-                                <line x1="9" y1="20" x2="9" y2="23"></line>
-                                <line x1="15" y1="20" x2="15" y2="23"></line>
-                                <line x1="20" y1="9" x2="23" y2="9"></line>
-                                <line x1="20" y1="14" x2="23" y2="14"></line>
-                                <line x1="1" y1="9" x2="4" y2="9"></line>
-                                <line x1="1" y1="14" x2="4" y2="14"></line>
-                            </svg>
-                        </div>
-                        <h3>IA & Automação</h3>
-                        <ul>
-                            <li><span class="bullet primary">•</span>Integrações com ChatGPT e outros modelos de IA</li>
-                            <li><span class="bullet secondary">•</span>Automação de tarefas repetitivas</li>
-                            <li><span class="bullet primary">•</span>Assistentes internos para equipas (FAQ, suporte, documentação)</li>
-                        </ul>
-                    </article>
-                    
-                    <article class="detail-card">
-                        <div class="detail-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                            </svg>
-                        </div>
-                        <h3>Formação</h3>
-                        <ul>
-                            <li><span class="bullet primary">•</span>Workshops de IA e ChatGPT para equipas</li>
-                            <li><span class="bullet secondary">•</span>Introdução à programação para não-programadores</li>
-                            <li><span class="bullet primary">•</span>Sessões de capacitação à medida (casos da própria empresa)</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="contact-bg"></div>
-            <div class="contact-orb"></div>
-            
-            <div class="container">
-                <header class="section-header">
-                    <h2>Contacta a <span class="gradient-text">Hodoki</span></h2>
-                    <p>Queres falar sobre um projeto, uma ideia ou formação para a tua equipa? Entra em contacto e respondemos com uma proposta simples e direta.</p>
-                </header>
-                
-                <div class="contact-grid">
-                    <!-- Contact Info Card -->
-                    <article class="contact-card">
-                        <h3>Informações de Contacto</h3>
-                        
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                        <polyline points="22,6 12,13 2,6"></polyline>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4>Email</h4>
-                                    <a href="mailto:hello@hodoki.pt">hello@hodoki.pt</a>
-                                    <button class="btn btn-ghost btn-sm copy-btn" id="copyEmailBtn" onclick="copyEmail()">
-                                        <svg class="copy-icon" id="copyIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                        </svg>
-                                        <svg class="check-icon-sm hidden" id="checkIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        <span id="copyText">Copiar email</span>
-                                    </button>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4>Telemóvel</h4>
-                                    <a href="tel:+351934935671" class="phone-link">
-                                        <span class="flag">🇵🇹</span>
-                                        +351 934 935 671
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                        <circle cx="12" cy="10" r="3"></circle>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4>Morada</h4>
-                                    <p>Avenida da Conduta, nº 314<br>Gondomar, Portugal</p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Contact Form Card -->
-                    <article class="contact-card">
-                        <h3>Envie-nos uma mensagem</h3>
-                        
-                        <form action="https://formspree.io/f/xkgdgpva" method="POST" class="contact-form">
-                            <div class="form-group">
-                                <label for="name">Nome *</label>
-                                <input type="text" id="name" name="name" required placeholder="O seu nome">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="phone">Telefone</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+351 ...">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Mensagem *</label>
-                                <textarea id="message" name="message" required placeholder="Conte-nos sobre o seu projeto ou questão..." rows="4"></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-gradient btn-lg btn-full">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                                </svg>
-                                Enviar mensagem
-                            </button>
-                            
-                            <p class="form-privacy">
-                                Ao enviar este formulário, concorda com a nossa 
-                                <a href="privacy-policy.html">Política de Privacidade</a>
-                            </p>
-                        </form>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-logo">
-                <img src="logo-hodoki.png" alt="Hodoki" class="logo">
-            </div>
-            
-            <div class="footer-info">
-                <p class="copyright">© <span id="year"></span> Hodoki. Todos os direitos reservados.</p>
-                <a href="mailto:hello@hodoki.pt">hello@hodoki.pt</a>
-                <a href="privacy-policy.html" class="privacy-link">Política de Privacidade e RGPD</a>
-            </div>
+    <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow reveal">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          <span data-pt="Gondomar, Portugal · Mais de 15 anos de experiência"
+                data-en="Gondomar, Portugal · Over 15 years of experience">
+            Gondomar, Portugal · Mais de 15 anos de experiência
+          </span>
         </div>
-    </footer>
-
-    <!-- Toast Notification -->
-    <div class="toast hidden" id="toast">
-        <div class="toast-content">
-            <strong class="toast-title" id="toastTitle"></strong>
-            <p class="toast-message" id="toastMessage"></p>
+        <h1 class="reveal reveal-delay-1">
+          <span data-pt="Transformamos ideias em" data-en="We transform ideas into">Transformamos ideias em</span><br>
+          <span class="word-ticker-wrap" aria-live="polite" aria-atomic="true">
+            <span class="ticker-current"></span>
+            <span class="ticker-next" aria-hidden="true"></span>
+          </span>
+        </h1>
+        <p class="hero-sub reveal reveal-delay-2"
+           data-pt="Do software à produção 3D, da formação técnica à consultoria em AI — somos o parceiro tecnológico que a sua empresa precisa."
+           data-en="From software to 3D production, from technical training to AI consulting — we are the technology partner your company needs.">
+          Do software à produção 3D, da formação técnica à consultoria em AI — somos o parceiro tecnológico que a sua empresa precisa.
+        </p>
+        <div class="reveal reveal-delay-3" style="margin-top:0.5rem;">
+          <a href="#areas" class="btn btn-ghost" style="font-size:0.8rem;padding:0.6rem 1.2rem;opacity:0.7;">
+            <span data-pt="Escolha a sua área" data-en="Choose your area">Escolha a sua área</span>
+            <span class="btn-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg></span>
+          </a>
         </div>
+      </div>
     </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- ═══════ SECTORS CHOOSER (full-bleed 2×2) ════════════════ -->
+  <section id="areas" style="padding:0;" aria-label="Áreas de serviço">
+    <div class="sectors-chooser">
+
+      <a href="software.html" class="sector-card sc-software reveal">
+        <div class="sector-card-bg">
+          <img src="imgs/imagessectors/webdevelopment.jpg" alt="" aria-hidden="true" loading="eager" />
+        </div>
+        <div class="sector-card-overlay"></div>
+        <div class="sector-card-content">
+          <span class="service-tag" data-pt="Desenvolvimento" data-en="Development">Desenvolvimento</span>
+          <h3 data-pt="Software &amp; Websites" data-en="Software &amp; Websites">Software &amp; Websites</h3>
+          <p data-pt="Aplicações empresariais, portais web, lojas online e softwares de gestão totalmente à medida."
+             data-en="Business applications, web portals, online stores and fully custom management software.">
+            Aplicações empresariais, portais web, lojas online e softwares de gestão totalmente à medida.
+          </p>
+          <span class="sector-card-arrow">
+            <span data-pt="Saber mais" data-en="Learn more">Saber mais</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="formacao.html" class="sector-card sc-formacao reveal reveal-delay-1">
+        <div class="sector-card-bg">
+          <img src="imgs/imagessectors/training.jpg" alt="" aria-hidden="true" loading="eager" />
+        </div>
+        <div class="sector-card-overlay"></div>
+        <div class="sector-card-content">
+          <span class="service-tag" style="background:rgba(100,255,160,0.12);border-color:rgba(100,255,160,0.25);color:#64ffa0;"
+                data-pt="Formação" data-en="Training">Formação</span>
+          <h3 data-pt="Formação em AI, 3D &amp; Programação" data-en="AI, 3D &amp; Programming Training">Formação em AI, 3D &amp; Programação</h3>
+          <p data-pt="Cursos práticos para empresas e particulares. Formação financiada pelo IEFP. Plataforma LMS própria."
+             data-en="Practical courses for companies and individuals. IEFP-funded training. Our own LMS platform.">
+            Cursos práticos para empresas e particulares. Formação financiada pelo IEFP. Plataforma LMS própria.
+          </p>
+          <span class="sector-card-arrow">
+            <span data-pt="Saber mais" data-en="Learn more">Saber mais</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="consultoria.html" class="sector-card sc-consult reveal reveal-delay-2">
+        <div class="sector-card-bg">
+          <img src="imgs/imagessectors/consultingAI.webp" alt="" aria-hidden="true" loading="lazy" />
+        </div>
+        <div class="sector-card-overlay"></div>
+        <div class="sector-card-content">
+          <span class="service-tag" style="background:rgba(255,208,96,0.12);border-color:rgba(255,208,96,0.25);color:#ffd060;"
+                data-pt="Consultoria" data-en="Consulting">Consultoria</span>
+          <h3 data-pt="Consultoria em AI &amp; RGPD" data-en="AI &amp; GDPR Consulting">Consultoria em AI &amp; RGPD</h3>
+          <p data-pt="Servidores AI on-premise com o modelo Gemma4. Os dados da sua empresa nunca saem das suas instalações."
+             data-en="On-premise AI servers with the Gemma4 model. Your company's data never leaves your premises.">
+            Servidores AI on-premise com o modelo Gemma4. Os dados da sua empresa nunca saem das suas instalações.
+          </p>
+          <span class="sector-card-arrow">
+            <span data-pt="Saber mais" data-en="Learn more">Saber mais</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="tres-d.html" class="sector-card sc-3d reveal reveal-delay-3">
+        <div class="sector-card-bg">
+          <img src="imgs/imagessectors/Archviz.png" alt="" aria-hidden="true" loading="lazy" />
+        </div>
+        <div class="sector-card-overlay"></div>
+        <div class="sector-card-content">
+          <span class="service-tag" style="background:rgba(180,100,255,0.12);border-color:rgba(180,100,255,0.25);color:#b464ff;"
+                data-pt="Produção 3D" data-en="3D Production">Produção 3D</span>
+          <h3 data-pt="3D, ArchViz &amp; Unreal Engine" data-en="3D, ArchViz &amp; Unreal Engine">3D, ArchViz &amp; Unreal Engine</h3>
+          <p data-pt="Produção 3D para jogos, filmes e arquitectura. 3DS MAX, Corona Renderer e Unreal Engine 5."
+             data-en="3D production for games, films and architecture. 3DS MAX, Corona Renderer and Unreal Engine 5.">
+            Produção 3D para jogos, filmes e arquitectura. 3DS MAX, Corona Renderer e Unreal Engine 5.
+          </p>
+          <span class="sector-card-arrow">
+            <span data-pt="Saber mais" data-en="Learn more">Saber mais</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══════ CLIENTS ══════════════════════════════════════════ -->
+  <section id="clientes" style="background:var(--navy);padding:4rem 0;" aria-labelledby="clientes-title">
+    <div class="container">
+      <div class="section-header center" style="margin-bottom:2.5rem;">
+        <h2 id="clientes-title" class="reveal"
+            data-pt="Referências de confiança" data-en="Trusted references">Referências de confiança</h2>
+      </div>
+    </div>
+    <div class="clients-scroll-wrapper reveal">
+      <div class="clients-track" aria-label="Clientes e parceiros Hodoki">
+        <span class="client-item"><img src="imgs/logosCompanies/TLC.png" alt="TLC" class="client-logo" loading="lazy">TLC</span>
+        <span class="client-item"><img src="imgs/logosCompanies/2019_Discovery_logo.svg" alt="Discovery Channel" class="client-logo" loading="lazy">Discovery Channel</span>
+        <span class="client-item"><img src="imgs/logosCompanies/animalplanet.png" alt="Animal Planet" class="client-logo" loading="lazy">Animal Planet</span>
+        <span class="client-item"><img src="imgs/logosCompanies/mcoutinho.png" alt="MCoutinho" class="client-logo" loading="lazy">MCoutinho</span>
+        <span class="client-item"><img src="imgs/logosCompanies/worten_SONAE.png" alt="Sonae" class="client-logo" loading="lazy">Sonae</span>
+        <span class="client-item"><img src="imgs/logosCompanies/redrex.svg" alt="Redrex" class="client-logo client-logo-transparent" loading="lazy">Redrex</span>
+        <span class="client-item"><img src="imgs/logosCompanies/gitopia.svg" alt="Gitopia" class="client-logo client-logo-transparent" loading="lazy">Gitopia</span>
+        <span class="client-item"><img src="imgs/logosCompanies/salvador%20caetano.png" alt="Salvador Caetano" class="client-logo" loading="lazy">Salvador Caetano</span>
+        <span class="client-item"><img src="imgs/logosCompanies/iefp.webp" alt="IEFP" class="client-logo" loading="lazy">IEFP</span>
+        <span class="client-item"><img src="imgs/logosCompanies/antena3.webp" alt="Antena 3" class="client-logo" loading="lazy">Antena 3</span>
+        <span class="client-item"><img src="imgs/logosCompanies/rtp.png" alt="RTP" class="client-logo" loading="lazy">RTP</span>
+        <span class="client-item"><img src="imgs/logosCompanies/Betclic.png" alt="Betclic" class="client-logo" loading="lazy">Betclic</span>
+        <span class="client-item"><img src="imgs/logosCompanies/agsmachining.jpg" alt="AGS Machining" class="client-logo" loading="lazy">AGS Machining</span>
+        <span class="client-item"><img src="imgs/logosCompanies/cartazesdechocolates.svg" alt="Cartazes de Chocolates" class="client-logo" loading="lazy">Cartazes de Chocolates</span>
+        <!-- duplicate for seamless loop -->
+        <span class="client-item" aria-hidden="true"><img src="imgs/logosCompanies/TLC.png" alt="" class="client-logo" loading="lazy">TLC</span>
+        <span class="client-item" aria-hidden="true"><img src="imgs/logosCompanies/2019_Discovery_logo.svg" alt="" class="client-logo" loading="lazy">Discovery Channel</span>
+        <span class="client-item" aria-hidden="true"><img src="imgs/logosCompanies/animalplanet.png" alt="" class="client-logo" loading="lazy">Animal Planet</span>
+        <span class="client-item" aria-hidden="true"><img src="imgs/logosCompanies/mcoutinho.png" alt="" class="client-logo" loading="lazy">MCoutinho</span>
+        <span class="client-item" aria-hidden="true"><img src="imgs/logosCompanies/worten_SONAE.png" alt="" class="client-logo" loading="lazy">Sonae</span>
+        <span class="client-item" aria-hidden="true"><img src="imgs/logosCompanies/redrex.svg" alt="" class="client-logo client-logo-transparent" loading="lazy">Redrex</span>
+        <span class="client-item" aria-hidden="true"><img src="imgs/logosCompanies/gitopia.svg" alt="" class="client-logo client-logo-transparent" loading="lazy">Gitopia</span>
+        <span class="client-item" aria-hidden="true"><img src="imgs/logosCompanies/salvador%20caetano.png" alt="" class="client-logo" loading="lazy">Salvador Caetano</span>
+        <span class="client-item" aria-hidden="true"><img src="imgs/logosCompanies/iefp.webp" alt="" class="client-logo" loading="lazy">IEFP</span>
+        <span class="client-item" aria-hidden="true"><img src="imgs/logosCompanies/antena3.webp" alt="" class="client-logo" loading="lazy">Antena 3</span>
+        <span class="client-item" aria-hidden="true"><img src="imgs/logosCompanies/rtp.png" alt="" class="client-logo" loading="lazy">RTP</span>
+        <span class="client-item" aria-hidden="true"><img src="imgs/logosCompanies/Betclic.png" alt="" class="client-logo" loading="lazy">Betclic</span>
+        <span class="client-item" aria-hidden="true"><img src="imgs/logosCompanies/agsmachining.jpg" alt="" class="client-logo" loading="lazy">AGS Machining</span>
+        <span class="client-item" aria-hidden="true"><img src="imgs/logosCompanies/cartazesdechocolates.svg" alt="" class="client-logo" loading="lazy">Cartazes de Chocolates</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CONTACT ══════════════════════════════════════════ -->
+  <section id="contacto" style="background:var(--navy-mid);" aria-labelledby="contacto-title">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow reveal">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          <span data-pt="Contacto" data-en="Contact">Contacto</span>
+        </div>
+        <h2 id="contacto-title" class="section-title reveal reveal-delay-1"
+            data-pt="Vamos trabalhar juntos" data-en="Let's work together">Vamos trabalhar juntos</h2>
+        <p class="section-lead reveal reveal-delay-2"
+           data-pt="Conte-nos o seu projecto e entraremos em contacto em menos de 24 horas."
+           data-en="Tell us about your project and we'll get back to you within 24 hours.">
+          Conte-nos o seu projecto e entraremos em contacto em menos de 24 horas.
+        </p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-info reveal">
+          <div class="contact-detail">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-text">
+              <strong data-pt="Email" data-en="Email">Email</strong>
+              <a href="mailto:hello@hodoki.pt">hello@hodoki.pt</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.58a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 16z"/></svg>
+            </div>
+            <div class="contact-text">
+              <strong data-pt="Telemóvel" data-en="Mobile">Telemóvel</strong>
+              <a href="tel:+351934935671">🇵🇹 +351 934 935 671</a>
+              <div class="contact-note" data-pt="Chamada para rede móvel nacional (custo de chamada local)" data-en="Call to national mobile network (local call rate)">Chamada para rede móvel nacional (custo de chamada local)</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-text">
+              <strong data-pt="Morada" data-en="Address">Morada</strong>
+              <span>Avenida da Conduta, nº 314<br />Gondomar, Portugal</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <div class="contact-text">
+              <strong data-pt="Plataforma LMS" data-en="LMS Platform">Plataforma LMS</strong>
+              <a href="https://study.hodoki.pt" target="_blank" rel="noopener noreferrer">study.hodoki.pt</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrapper card-shell reveal reveal-delay-2">
+          <div class="card-inner">
+            <form action="https://formspree.io/f/xkgdgpva" method="POST" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name" data-pt="Nome *" data-en="Name *">Nome *</label>
+                <input type="text" id="name" name="name" required
+                       data-pt-placeholder="O seu nome" data-en-placeholder="Your name" placeholder="O seu nome" />
+              </div>
+              <div class="form-group">
+                <label for="email" data-pt="Email *" data-en="Email *">Email *</label>
+                <input type="email" id="email" name="email" required
+                       data-pt-placeholder="seuemail@exemplo.com" data-en-placeholder="youremail@example.com" placeholder="seuemail@exemplo.com" />
+              </div>
+              <div class="form-group">
+                <label for="phone" data-pt="Telefone" data-en="Phone">Telefone</label>
+                <input type="tel" id="phone" name="phone" placeholder="+351 ..." />
+              </div>
+              <div class="form-group">
+                <label for="message" data-pt="Mensagem *" data-en="Message *">Mensagem *</label>
+                <textarea id="message" name="message" required rows="4"
+                          data-pt-placeholder="Conte-nos sobre o seu projecto ou questão..."
+                          data-en-placeholder="Tell us about your project or question..."
+                          placeholder="Conte-nos sobre o seu projecto ou questão..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-submit" style="width:100%;justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                <span data-pt="Enviar mensagem" data-en="Send message">Enviar mensagem</span>
+              </button>
+              <p class="form-privacy">
+                <span data-pt="Ao enviar concorda com a nossa" data-en="By submitting you agree to our">Ao enviar concorda com a nossa</span>
+                <a href="privacy-policy.html" data-pt="Política de Privacidade" data-en="Privacy Policy">Política de Privacidade</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-ph"></div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
