@@ -54,7 +54,11 @@
     const lbImg = document.getElementById('lightbox-img');
     if (!lb) return;
 
+<<<<<<< Updated upstream
     document.querySelectorAll('.archviz-item img').forEach(img => {
+=======
+    document.querySelectorAll('.archviz-item img, .env-img-item img').forEach(img => {
+>>>>>>> Stashed changes
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', () => {
         lbImg.src = img.src;
@@ -78,6 +82,76 @@
     });
   }
 
+<<<<<<< Updated upstream
+=======
+  /* ── Word Ticker ─────────────────────────────────────────── */
+  function initWordTicker() {
+    const wrap = document.querySelector('.word-ticker-wrap');
+    if (!wrap) return;
+
+    const words = {
+      pt: ['software inteligente', 'websites & apps', 'consultoria em AI', 'produção 3D', 'ArchViz'],
+      en: ['intelligent software', 'websites & apps', 'AI consulting',      '3D production',  'ArchViz']
+    };
+
+    const curr = wrap.querySelector('.ticker-current');
+    const next = wrap.querySelector('.ticker-next');
+    let idx  = 0;
+    let busy = false;
+
+    function lang()  { return document.documentElement.lang === 'en' ? 'en' : 'pt'; }
+    function list()  { return words[lang()]; }
+
+    // Seed: curr shows word[0], next pre-loads word[1] so it's
+    // fully rendered (GPU layer promoted) before the first tick fires.
+    curr.textContent = list()[0];
+    next.textContent = list()[1];
+
+    function tick() {
+      if (busy) return;
+      busy = true;
+
+      // next.textContent was pre-loaded at end of the previous cycle
+      // (or seeded above), so the gradient text is already on the GPU layer.
+      const l       = list();
+      const nextIdx = (idx + 1) % l.length;
+
+      // Trigger slide
+      wrap.classList.add('ticking');
+
+      // Wait for transition to finish (600 ms peak) plus a small buffer
+      setTimeout(() => {
+        // Freeze transitions so the invisible reset doesn't animate
+        curr.style.transition = 'none';
+        next.style.transition  = 'none';
+        idx = nextIdx;
+        curr.textContent = l[idx];
+        wrap.classList.remove('ticking');
+
+        // Pre-load the NEXT word immediately so the browser has the full
+        // 3200 ms interval to render it before it animates.
+        next.textContent = l[(idx + 1) % l.length];
+
+        // Re-enable transitions after browser has repainted
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          curr.style.transition = '';
+          next.style.transition  = '';
+          busy = false;
+        }));
+      }, 680);
+    }
+
+    setInterval(tick, 3200);
+
+    // Instant language update when lang attr changes
+    new MutationObserver(() => {
+      const l = list();
+      curr.textContent = l[idx];
+      next.textContent = l[(idx + 1) % l.length];
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  }
+
+>>>>>>> Stashed changes
   /* ── Active Nav on Scroll (homepage sections) ────────────── */
   function initNavHighlight() {
     const sections = document.querySelectorAll('section[id]');
@@ -108,6 +182,10 @@
 
   function init() {
     initReveals();
+<<<<<<< Updated upstream
+=======
+    initWordTicker();
+>>>>>>> Stashed changes
     initVideoTabs();
     initYouTube();
     initLightbox();

@@ -352,11 +352,19 @@ nav {
 /* ── Hero ─────────────────────────────────────────────────── */
 .hero {
   position: relative;
+<<<<<<< Updated upstream
   min-height: 100dvh;
   display: flex;
   align-items: center;
   overflow: hidden;
   padding: 8rem 0 6rem;
+=======
+  min-height: 58vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 9rem 0 5rem;
+>>>>>>> Stashed changes
 }
 
 .hero-bg {
@@ -420,13 +428,67 @@ nav {
   background-clip: text;
 }
 
+<<<<<<< Updated upstream
 .hero h1 span {
+=======
+.hero h1 span,
+.hero-gradient-text {
+>>>>>>> Stashed changes
   background: linear-gradient(135deg, var(--cyan) 0%, var(--cyan-bright) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+<<<<<<< Updated upstream
+=======
+/* ── Word Ticker ─────────────────────────────────────────── */
+.word-ticker-wrap {
+  display: inline-block;
+  position: relative;
+  vertical-align: bottom;
+  /* No overflow:hidden — it clips the drop-shadow glow.
+     ticker-next is position:absolute + opacity:0, so it stays invisible. */
+}
+
+/* Both words share the same vivid gradient + glow */
+.ticker-current,
+.ticker-next {
+  display: block;
+  white-space: nowrap;
+  will-change: opacity, transform; /* GPU layer → prevents gradient-text repaint flicker */
+  background: linear-gradient(110deg, #ffffff 0%, #00e8ff 45%, #00b8d9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 18px rgba(0,220,255,0.65));
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity  0.55s ease;
+}
+
+/* Resting state */
+.ticker-current {
+  opacity: 1;
+  transform: translateY(0);
+}
+.ticker-next {
+  position: absolute;
+  top: 0; left: 0;
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+/* Ticking — outgoing fades/slides up, incoming fades/slides in */
+.word-ticker-wrap.ticking .ticker-current {
+  opacity: 0;
+  transform: translateY(-22px);
+}
+.word-ticker-wrap.ticking .ticker-next {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+>>>>>>> Stashed changes
 .hero-sub {
   font-size: 1.15rem;
   color: var(--white-60);
@@ -905,6 +967,91 @@ section { padding: 7rem 0; position: relative; }
   color: var(--cyan);
 }
 
+<<<<<<< Updated upstream
+=======
+/* ── Game Environments ───────────────────────────────────── */
+.env-project {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem 3rem;
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--border-dim);
+  align-items: start;
+}
+.env-project:first-of-type { padding-top: 0.5rem; }
+.env-project:last-of-type  { border-bottom: none; padding-bottom: 0; }
+
+.env-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+.env-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 99px;
+  border: 1px solid;
+}
+.env-badge-ue4   { color: #7c9fff; border-color: rgba(124,159,255,0.3); background: rgba(124,159,255,0.08); }
+.env-badge-ue5   { color: var(--cyan); border-color: rgba(0,212,255,0.25); background: rgba(0,212,255,0.06); }
+.env-badge-unity { color: #c0c8d8; border-color: rgba(192,200,216,0.3); background: rgba(192,200,216,0.06); }
+
+.env-info h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 0.8rem;
+  line-height: 1.25;
+}
+.env-info p {
+  font-size: 0.875rem;
+  color: var(--white-60);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.env-imgs { display: grid; gap: 0.6rem; }
+.env-imgs-4 { grid-template-columns: repeat(2, 1fr); }
+.env-imgs-3 { grid-template-columns: repeat(3, 1fr); }
+.env-imgs-1 { grid-template-columns: 1fr; }
+
+.env-img-item {
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  cursor: zoom-in;
+  background: var(--navy-card);
+  border: 1px solid var(--border-dim);
+  transition: border-color 0.3s var(--spring);
+}
+.env-img-item:hover { border-color: var(--border); }
+.env-img-item img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  display: block;
+  opacity: 0.88;
+  transition: transform 0.65s var(--spring), opacity 0.3s;
+}
+.env-imgs-1 .env-img-item img { height: 280px; }
+.env-img-item:hover img { transform: scale(1.05); opacity: 1; }
+
+@media (max-width: 900px) {
+  .env-project { grid-template-columns: 1fr; gap: 1.5rem; }
+  .env-imgs-3   { grid-template-columns: repeat(3, 1fr); }
+  .env-imgs-4   { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .env-imgs-3 { grid-template-columns: repeat(2, 1fr); }
+  .env-img-item img { height: 140px; }
+  .env-imgs-1 .env-img-item img { height: 220px; }
+}
+
+/* ── ArchViz ─────────────────────────────────────────────── */
+>>>>>>> Stashed changes
 .archviz-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1001,6 +1148,7 @@ section { padding: 7rem 0; position: relative; }
 }
 .client-logo {
   display: block;
+<<<<<<< Updated upstream
   height: 28px;
   width: auto;
   max-width: 90px;
@@ -1010,6 +1158,23 @@ section { padding: 7rem 0; position: relative; }
   transition: opacity 0.3s var(--spring);
 }
 .client-item:hover .client-logo { opacity: 0.85; }
+=======
+  height: 26px;
+  width: auto;
+  max-width: 88px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 4px 8px;
+  border-radius: 5px;
+  opacity: 0.85;
+  transition: opacity 0.3s var(--spring);
+}
+.client-item:hover .client-logo { opacity: 1; }
+.client-logo-transparent {
+  background: transparent;
+  padding: 2px 0;
+}
+>>>>>>> Stashed changes
 
 /* ── Contact ──────────────────────────────────────────────── */
 #contacto { background: var(--navy-mid); }
@@ -1183,6 +1348,131 @@ footer {
 .reveal-delay-4 { transition-delay: 0.4s; }
 .reveal-delay-5 { transition-delay: 0.5s; }
 
+<<<<<<< Updated upstream
+=======
+/* ── Sectors Chooser (full-bleed 2×2 on homepage) ───────── */
+.sectors-chooser {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+}
+
+.sector-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 52vh;
+  padding: 2.75rem 3rem;
+  text-decoration: none;
+  color: var(--white);
+  background: var(--navy-card);
+}
+
+.sector-card-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.sector-card-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center;
+  transition: transform 0.9s var(--spring);
+}
+.sector-card:hover .sector-card-bg img {
+  transform: scale(1.07);
+}
+
+.sector-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(6,15,30,0.94) 0%,
+    rgba(6,15,30,0.55) 42%,
+    rgba(6,15,30,0.22) 100%
+  );
+  transition: background 0.5s var(--spring);
+}
+.sector-card:hover .sector-card-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(6,15,30,0.88) 0%,
+    rgba(6,15,30,0.38) 48%,
+    rgba(6,15,30,0.06) 100%
+  );
+}
+
+.sector-card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  transform: translateY(8px);
+  transition: transform 0.5s var(--spring);
+}
+.sector-card:hover .sector-card-content {
+  transform: translateY(0);
+}
+
+.sector-card h3 {
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  color: var(--white);
+}
+
+.sector-card p {
+  font-size: 0.875rem;
+  color: var(--white-60);
+  margin: 0;
+  max-width: 38ch;
+  line-height: 1.65;
+}
+
+.sector-card-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white-35);
+  margin-top: 0.2rem;
+  transition: color 0.3s var(--spring);
+}
+.sector-card:hover .sector-card-arrow { color: var(--white-80); }
+.sector-card-arrow svg {
+  flex-shrink: 0;
+  transition: transform 0.35s var(--spring);
+}
+.sector-card:hover .sector-card-arrow svg { transform: translateX(5px); }
+
+/* Accent line at bottom of each card on hover */
+.sector-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.4s var(--spring);
+}
+.sc-software::after { background: var(--cyan); }
+.sc-formacao::after { background: #64ffa0; }
+.sc-consult::after  { background: #ffd060; }
+.sc-3d::after       { background: #b464ff; }
+.sector-card:hover::after { opacity: 1; }
+
+>>>>>>> Stashed changes
 /* ── Homepage Service Areas Grid ─────────────────────────── */
 .areas-grid {
   display: grid;
@@ -1283,13 +1573,21 @@ footer {
 .page-hero-bg img {
   width: 100%; height: 100%;
   object-fit: cover;
+<<<<<<< Updated upstream
   opacity: 0.12;
+=======
+  opacity: 0.38;
+>>>>>>> Stashed changes
 }
 .page-hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
+<<<<<<< Updated upstream
   background: linear-gradient(to right, rgba(6,15,30,0.95) 40%, rgba(6,15,30,0.5) 100%);
+=======
+  background: linear-gradient(to right, rgba(6,15,30,0.88) 35%, rgba(6,15,30,0.35) 100%);
+>>>>>>> Stashed changes
 }
 .page-hero .hero-orb-1 { opacity: 0.6; }
 .page-hero-content {
@@ -1433,6 +1731,11 @@ footer {
   .areas-grid { grid-template-columns: 1fr; }
   .cta-banner { padding: 2.5rem 1.75rem; }
   .lms-banner { padding: 1.75rem; gap: 1.5rem; }
+<<<<<<< Updated upstream
+=======
+  .sectors-chooser { grid-template-columns: 1fr; }
+  .sector-card { min-height: 46vh; padding: 2.25rem 2rem; }
+>>>>>>> Stashed changes
 }
 
 @media (max-width: 768px) {
@@ -1447,9 +1750,18 @@ footer {
   .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
+<<<<<<< Updated upstream
+=======
+  .sector-card { min-height: 42vh; padding: 2rem 1.5rem; }
+>>>>>>> Stashed changes
 }
 
 @media (max-width: 480px) {
   .archviz-grid { grid-template-columns: 1fr; }
+<<<<<<< Updated upstream
   .hero { padding: 6rem 0 4rem; }
+=======
+  .hero { padding: 6rem 0 3rem; }
+  .sector-card { min-height: 38vh; }
+>>>>>>> Stashed changes
 }
